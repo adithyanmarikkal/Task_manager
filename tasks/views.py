@@ -38,8 +38,24 @@ def delete_task(request, pk):
         return Response({'message': 'Task deleted successfully'}, status=200)
     except Task.DoesNotExist:
         return Response({'message': 'Task not found'}, status=404)
+
 @api_view(['PUT'])
 def update_task(request, pk):
+    try:
+        task = Task.objects.get(id=pk)
+    except Task.DoesNotExist:
+        return Response({'message': 'Task not found'}, status=404)
+
+    serializer = TaskSerializer(task, data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=200)
+
+    return Response(serializer.errors, status=400)
+
+@api_view(['PATCH'])
+def partial_update_task(request, pk):
     try:
         task = Task.objects.get(id=pk)
     except Task.DoesNotExist:
@@ -52,3 +68,6 @@ def update_task(request, pk):
         return Response(serializer.data, status=200)
 
     return Response(serializer.errors, status=400)
+
+@api_view(['POST'])
+def register()
