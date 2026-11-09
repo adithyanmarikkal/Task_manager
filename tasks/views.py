@@ -69,5 +69,3 @@ def partial_update_task(request, pk):
 
     return Response(serializer.errors, status=400)
 
-@api_view(['POST'])
-def register()
