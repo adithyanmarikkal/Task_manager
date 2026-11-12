@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lm(2i3&+$jffper1&4z0)1y7!ed58opjlv8uc5h0fl!cbt5d!%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver']
 
 
 # Application definition
@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tasks',
-    "rest_framework",
+    'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

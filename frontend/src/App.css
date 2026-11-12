@@ -1,0 +1,4 @@
+/* Global resets for Kanso design system */
+* {
+  box-sizing: border-box;
+}
