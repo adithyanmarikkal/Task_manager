@@ -132,7 +132,7 @@ export default function ProfilePage() {
 
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm border border-surface-variant/40">
               <span className="w-2 h-2 rounded-full bg-secondary" />
-              <span>Kanso Workspace Pro</span>
+              <span>Active</span>
             </div>
           </div>
 
